@@ -1,0 +1,474 @@
+{
+    "root": {
+      "id": "toplevel",
+      "relevance": 1.0,
+      "fields": {
+        "totalCount": 38
+      },
+      "coverage": {
+        "coverage": 100,
+        "documents": 38,
+        "full": true,
+        "nodes": 1,
+        "results": 1,
+        "resultsFull": 1
+      },
+      "children": [
+        {
+          "id": "id:personal:pdf:g=jo-bergum:ee6cdd437411e98cc396ed6f84852eed6205dde3",
+          "relevance": 2.647661200890475,
+          "source": "langchainstreaming_content",
+          "fields": {
+            "matchfeatures": {
+              "best_chunks": {
+                "0": 0.8903485353041056,
+                "2": 0.8375738706237257,
+                "3": 0.9197387949626437
+              },
+              "chunk_scores": {
+                "0": 0.8903485353041056,
+                "2": 0.8375738706237257,
+                "3": 0.9197387949626437
+              },
+              "my_distance": {
+                "0": 4.279842706901871,
+                "1": 4.586204680223565,
+                "2": 4.436393976112417,
+                "3": 4.219746042041639
+              },
+              "my_distance_scores": {
+                "0": 0.18939958167556556,
+                "1": 0.17901241670220702,
+                "2": 0.18394546171488166,
+                "3": 0.1915802017848482
+              },
+              "my_text_scores": {
+                "0": 0.70094895362854,
+                "2": 0.653628408908844,
+                "3": 0.7281585931777954
+              }
+            },
+            "id": "ee6cdd437411e98cc396ed6f84852eed6205dde3",
+            "title": "ColBERTv2: Effective and Efficient Retrieval via Lightweight Late Interaction",
+            "page": 29,
+            "chunks": [
+              "ColBERT Random1 16 256 4096# Distinct Tokens per Cluster0255075100Proportion(a) Number of distinct tokensappearing in each cluster.4 64 1024# Distinct Clusters per Token0255075100Proportion(b) Number of distinct clus-ters each token appears in.Figure 2: Empirical CDFs analyzing semantic proper-ties of MS MARCO token-level embeddings both en-coded by ColBERT and randomly generated. The em-beddings are partitioned into 218 clusters and corre-spond to roughly 27,000 distinct tokens.A Analysis of ColBERT\u2019s SemanticSpaceColBERT (Khattab and Zaharia, 2020) decomposesrepresentations and similarity computation at thetoken level. Because of this compositional archi-tecture, we hypothesize that ColBERT exhibits a\u201clightweight\u201d semantic space: without any specialre-training, vectors corresponding to each sense ofa word would cluster very closely, with only minorvariation due to context.If this hypothesis is true, we would expect theembeddings corresponding to each token in the",
+              "vocabulary to localize in only a small number ofregions in the embedding space, correspondingto the contextual \u201csenses\u201d of the token. To val-idate this hypothesis, we analyze the ColBERTembeddings corresponding to the tokens in theMS MARCO Passage Ranking (Nguyen et al.,2016) collection: we perform k-means clusteringon the nearly 600M embeddings\u2014correspondingto 27,000 unique tokens\u2014into k = 218 clusters.As a baseline, we repeat this clustering with ran-dom embeddings but keep the true distribution oftokens. Figure 2 presents empirical cumulative dis-tribution function (eCDF) plots representing thenumber of distinct non-stopword tokens appear-ing in each cluster (2a) and the number of distinctclusters in which each token appears (2b).6 Mosttokens appear in a very small fraction of the num-ber of centroids: in particular, we see that roughly90% of clusters have \u226416 distinct tokens with6We rank tokens by number of clusters they appear in anddesignate the top-1% (under 300) as stopwords.",
+              "the ColBERT embeddings, whereas less than 50%of clusters have \u226416 distinct tokens with the ran-dom embeddings. This suggests that the centroidseffectively map the ColBERT semantic space.Table 6 presents examples to highlight the se-mantic space captured by the centroids. The mostfrequently appearing tokens in cluster #917 relateto photography; these include, for example, \u2018pho-tos\u2019 and \u2018photographs\u2019. If we then examine theadditional clusters in which these tokens appear,we \ufb01nd that there is substantial semantic overlapbetween these new clusters (e.g., Photos-Photo,Photo-Image-Picture) and cluster #917. We ob-serve a similar effect with tokens appearing in clus-ter #216932, comprising tornado-related terms.This analysis indicates that cluster centroids cansummarize the ColBERT representations with highprecision. In \u00a73.3, we propose a residual compres-sion mechanism that uses these centroids alongwith minor re\ufb01nements at the dimension level toef\ufb01ciently encode late-interaction vectors.",
+              "B Impact of CompressionOur residual compression approach (\u00a73.3) pre-serves approximately the same quality as the un-compressed embeddings. In particular, when ap-plied to a vanilla ColBERT model on MS MARCOwhose MRR@10 is 36.2% and Recall@50 is82.1%, the quality of the model with 2-bit compres-sion is 36.2% MRR@10 and 82.3% Recall@50.With 1-bit compression, the model achieves 35.5%MRR@10 and 81.6% Recall@50.7We also tested the residual compression ap-proach on late-interaction retrievers that conductdownstream tasks, namely, ColBERT-QA (Khat-tab et al., 2021b) for the NaturalQuestions open-domain QA task, and Baleen (Khattab et al., 2021a)for multi-hop reasoning on HoVer for claim veri\ufb01-cation. On the NQ dev set, ColBERT-QA\u2019s suc-cess@5 (success@20) dropped only marginallyfrom 75.3% (84.3%) to 74.3% (84.2%) andits downstream Open-QA answer exact matchdropped from 47.9% to 47.7%, when using 2-bit"
+            ]
+          }
+        },
+        {
+          "id": "id:personal:pdf:g=jo-bergum:e7f6c35b909c54acf5e01a2325dd5028c701a8fb",
+          "relevance": 2.6366074916111373,
+          "source": "langchainstreaming_content",
+          "fields": {
+            "matchfeatures": {
+              "best_chunks": {
+                "0": 0.8743955685279451,
+                "2": 0.5663270758183954,
+                "3": 0.7897806135233224
+              },
+              "chunk_scores": {
+                "0": 0.8743955685279451,
+                "1": 0.4061042337414743,
+                "2": 0.5663270758183954,
+                "3": 0.7897806135233224
+              },
+              "my_distance": {
+                "0": 4.770882726408784,
+                "1": 4.5912499052768485,
+                "2": 4.299376859309504,
+                "3": 4.2978887308380225
+              },
+              "my_distance_scores": {
+                "0": 0.1732837154052339,
+                "1": 0.17885088610620514,
+                "2": 0.1887014316113947,
+                "3": 0.18875443611701137
+              },
+              "my_text_scores": {
+                "0": 0.7011118531227112,
+                "1": 0.22725334763526917,
+                "2": 0.37762564420700073,
+                "3": 0.601026177406311
+              }
+            },
+            "id": "e7f6c35b909c54acf5e01a2325dd5028c701a8fb",
+            "title": "ColBERTv2: Effective and Efficient Retrieval via Lightweight Late Interaction",
+            "page": 13,
+            "chunks": [
+              "Q: what is xerror in rpart? Q: is sub question one word?Q: how to open a garage door without making noise? Q:is docx and dotx the same? Q: are upvotes and downvotesanonymous? Q: what is the difference between descriptiveessay and narrative essay? Q: how to change defaultuser pro\ufb01le in chrome? Q: does autohotkey need to beinstalled? Q: how do you tag someone on facebook witha youtube video? Q: has mjolnir ever been broken?Q: Snoopy can balance on an edge atop his doghouse. Is anyreason given for this? Q: How many Ents were at theEntmoot? Q: What does a hexagonal sun tell us aboutthe camera lens/sensor? Q: Should I simply ignore it ifauthors assume that Im male in their response to my review oftheir article? Q: Why is the 2s orbital lower in energy thanthe 2p orbital when the electrons in 2s are usually farther fromthe nucleus? Q: Are there reasons to use colour \ufb01lterswith digital cameras? Q: How does the current know howmuch to \ufb02ow, before having seen the resistor? Q: What",
+              "is the difference between Fact and Truth? Q: hAs a DM,how can I handle my Druid spying on everything with Wildshape as a spider? Q: What does 1x1 convolution meanin a neural network?Table 3: Comparison of a random sample of searchqueries (top) vs. forum queries (bottom).2021b), we evaluate retrieval quality by comput-ing the success@5 (S@5) metric. Speci\ufb01cally, weaward a point to the system for each query whereit \ufb01nds an accepted or upvoted (score \u22651) answerfrom the target page in the top-5 hits.Appendix D reports on the breakdown of con-stituent communities per topic, the constructionprocedure of LoTTE as well as licensing considera-tions, and relevant statistics. Figures 5 and 6 quan-titatively compare the search and forum queries.5 EvaluationWe now evaluate ColBERTv2 on passage retrievaltasks, testing its quality within the training domain(\u00a75.1) as well as outside the training domain inzero-shot settings (\u00a75.2). Unless otherwise stated,we compress ColBERTv2 embeddings to b = 2",
+              "bits per dimension in our evaluation.5.1 In-Domain Retrieval QualitySimilar to related work, we train for IR tasks on MSMARCO Passage Ranking (Nguyen et al., 2016).Within the training domain, our development-set re-sults are shown in Table 4, comparing ColBERTv2with vanilla ColBERT as well as state-of-the-artsingle-vector systems.While ColBERT outperforms single-vector sys-tems like RepBERT, ANCE, and even TAS-B, im-provements in supervision such as distillation fromcross-encoders enable systems like SPLADEv2,Method Of\ufb01cial Dev (7k) Local Eval (5k)MRR@10 R@50 R@1k MRR@10 R@50 R@1kModels without Distillation or Special PretrainingRepBERT 30.4 - 94.3 - - -DPR 31.1 - 95.2 - - -ANCE 33.0 - 95.9 - - -LTRe 34.1 - 96.2 - - -ColBERT 36.0 82.9 96.8 36.7 - -Models with Distillation or Special PretrainingTAS-B 34.7 - 97.8 - - -SPLADEv2 36.8 - 97.9 37.9 84.9 98.0PAIR 37.9 86.4 98.2 - - -coCondenser 38.2 - 98.4 - - -RocketQAv2 38.8 86.2 98.1 39.8 85.8 97.9ColBERTv2 39.7 86.8 98.4 40.8 86.3 98.3",
+              "Table 4: In-domain performance on the developmentset of MS MARCO Passage Ranking as well the \u201cLocalEval\u201d test set described by Khattab and Zaharia (2020).Dev-set results for baseline systems are from their re-spective papers: Zhan et al. (2020b), Xiong et al. (2020)for DPR and ANCE, Zhan et al. (2020a), Khattab andZaharia (2020), Hofst\u00e4tter et al. (2021), Gao and Callan(2021), Ren et al. (2021a), Formal et al. (2021a), andRen et al. (2021b).PAIR, and RocketQAv2 to achieve higher qual-ity than vanilla ColBERT. These supervision gainschallenge the value of \ufb01ne-grained late interaction,and it is not inherently clear whether the strongerinductive biases of ColBERT-like models permit itto accept similar gains under distillation, especiallywhen using compressed representations. Despitethis, we \ufb01nd that with denoised supervision andresidual compression, ColBERTv2 achieves thehighest quality across all systems. As we discuss"
+            ]
+          }
+        },
+        {
+          "id": "id:personal:pdf:g=jo-bergum:72bcb9b78cb76d3d71d770baf4808c19ebe4fa47",
+          "relevance": 2.2204415577904406,
+          "source": "langchainstreaming_content",
+          "fields": {
+            "matchfeatures": {
+              "best_chunks": {
+                "0": 0.6042987380775175,
+                "1": 0.6506942504358398,
+                "2": 0.5323984208248056
+              },
+              "chunk_scores": {
+                "0": 0.6042987380775175,
+                "1": 0.6506942504358398,
+                "2": 0.5323984208248056,
+                "3": 0.4330501484522775
+              },
+              "my_distance": {
+                "0": 5.074160228266455,
+                "1": 4.298770454588717,
+                "2": 4.2912673097252005,
+                "3": 4.307753386438822
+              },
+              "my_distance_scores": {
+                "0": 0.16463181121670817,
+                "1": 0.18872302708150027,
+                "2": 0.1889906408927835,
+                "3": 0.1884036290297464
+              },
+              "my_text_scores": {
+                "0": 0.4396669268608093,
+                "1": 0.4619712233543396,
+                "2": 0.3434077799320221,
+                "3": 0.24464651942253113
+              }
+            },
+            "id": "72bcb9b78cb76d3d71d770baf4808c19ebe4fa47",
+            "title": "ColBERTv2: Effective and Efficient Retrieval via Lightweight Late Interaction",
+            "page": 7,
+            "chunks": [
+              "vectors are stored. At search time, the query q isencoded into a multi-vector representation, and itssimilarity to a passage d is computed as the summa-tion of query-side \u201cMaxSim\u201d operations, namely,the largest cosine similarity between each query to-ken embedding and all passage token embeddings:Sq,d =N\u2211i=1Mmaxj=1Qi \u00b7DTj (1)where Q is an matrix encoding the query with Nvectors and D encodes the passage with M vectors.The intuition of this architecture is to align eachquery token with the most contextually relevantpassage token, quantify these matches, and com-bine the partial scores across the query. We referto Khattab and Zaharia (2020) for a more detailedtreatment of late interaction.3.2 SupervisionTraining a neural retriever typically requires posi-tive and negative passages for each query in thetraining set. Khattab and Zaharia (2020) trainColBERT using the of\ufb01cial \u27e8q, d +, d \u2212\u27e9triplesof MS MARCO. For each query, a positive d+ ishuman-annotated, and each negative d\u2212 is sampled",
+              "from unannotated BM25-retrieved passages.Subsequent work has identi\ufb01ed several weak-nesses in this standard supervision approach(see \u00a72.3). Our goal is to adopt a simple, uniformsupervision scheme that selects challenging neg-atives and avoids rewarding false positives or pe-nalizing false negatives. To this end, we start witha ColBERT model trained with triples as in Khat-tab et al. (2021b), using this to index the trainingpassages with ColBERTv2 compression.For each training query, we retrieve the top- kpassages. We feed each of those query\u2013passagepairs into a cross-encoder reranker. We use a22M-parameter MiniLM (Wang et al., 2020) cross-encoder trained with distillation by Thakur et al.(2021).2 This small model has been shown to ex-hibit very strong performance while being rela-tively ef\ufb01cient for inference, making it suitablefor distillation.We then collect w-way tuples consisting of aquery, a highly-ranked passage (or labeled posi-tive), and one or more lower-ranked passages. In",
+              "this work, we use w = 64passages per example.Like RocketQAv2 (Ren et al., 2021b), we use a2https://huggingface.co/cross-encoder/ms-marco-MiniLM-L-6-v2KL-Divergence loss to distill the cross-encoder\u2019sscores into the ColBERT architecture. We use KL-Divergence as ColBERT produces scores (i.e., thesum of cosine similarities) with a restricted scale,which may not align directly with the output scoresof the cross-encoder. We also employ in-batchnegatives per GPU, where a cross-entropy loss isapplied to the positive score of each query againstall passages corresponding to other queries in thesame batch. We repeat this procedure once to re-fresh the index and thus the sampled negatives.Denoised training with hard negatives has beenpositioned in recent work as ways to bridge thegap between single-vector and interaction-basedmodels, including late interaction architectures likeColBERT. Our results in \u00a75 reveal that such super-vision can improve multi-vector models dramati-",
+              "cally, resulting in state-of-the-art retrieval quality.3.3 RepresentationWe hypothesize that the ColBERT vectors clusterinto regions that capture highly-speci\ufb01c token se-mantics. We test this hypothesis in Appendix A,where evidence suggests that vectors correspond-ing to each sense of a word cluster closely, withonly minor variation due to context. We exploitthis regularity with a residual representation thatdramatically reduces the space footprint of late in-teraction models, completely off-the-shelf withoutarchitectural or training changes. Given a set ofcentroids C, ColBERTv2 encodes each vector v asthe index of its closest centroid Ct and a quantizedvector \u02dcr that approximates the residual r = v \u2212Ct.At search time, we use the centroid index t andresidual \u02dcr recover an approximate \u02dcv = Ct + \u02dcr.To encode \u02dcr, we quantize every dimension of rinto one or two bits. In principle, our b-bit encod-"
+            ]
+          }
+        },
+        {
+          "id": "id:personal:pdf:g=jo-bergum:ab8d923b5288b34c2f2a4ff4c3f2f63154e1fcc3",
+          "relevance": 2.177979996637577,
+          "source": "langchainstreaming_content",
+          "fields": {
+            "matchfeatures": {
+              "best_chunks": {
+                "0": 0.5372719356091115,
+                "1": 0.7884008702289215,
+                "2": 0.4271616313894626
+              },
+              "chunk_scores": {
+                "0": 0.5372719356091115,
+                "1": 0.7884008702289215,
+                "2": 0.4271616313894626,
+                "3": 0.4251455594100815
+              },
+              "my_distance": {
+                "0": 4.644684872177523,
+                "1": 4.057330198783664,
+                "2": 4.287100054567285,
+                "3": 4.488790899633118
+              },
+              "my_distance_scores": {
+                "0": 0.17715780821157423,
+                "1": 0.19773278799167782,
+                "2": 0.1891396019895908,
+                "3": 0.18218948731802517
+              },
+              "my_text_scores": {
+                "0": 0.36011412739753723,
+                "1": 0.5906680822372437,
+                "2": 0.23802202939987183,
+                "3": 0.24295607209205627
+              }
+            },
+            "id": "ab8d923b5288b34c2f2a4ff4c3f2f63154e1fcc3",
+            "title": "ColBERTv2: Effective and Efficient Retrieval via Lightweight Late Interaction",
+            "page": 19,
+            "chunks": [
+              "AcknowledgementsThis research was supported in part by af\ufb01liatemembers and other supporters of the StanfordDAWN project\u2014Ant Financial, Facebook, Google,and VMware\u2014as well as Cisco, SAP, Virtusa, andthe NSF under CAREER grant CNS-1651570. Anyopinions, \ufb01ndings, and conclusions or recommen-dations expressed in this material are those of theauthors and do not necessarily re\ufb02ect the views ofthe National Science Foundation.Broader Impact & Ethical ConsiderationsThis work is primarily an effort toward retrievalmodels that generalize better while performingreasonably ef\ufb01ciently in terms of space consump-tion. Strong out-of-the-box generalization to smalldomain-speci\ufb01c applications can serve many usersin practice, particularly where training data is notavailable. Moreover, retrieval holds signi\ufb01cantpromise for many downstream NLP tasks, as itcan help make language models smaller and thusmore ef\ufb01cient (i.e., by decoupling knowledge fromcomputation), more transparent (i.e., by allowing",
+              "users to check the sources the model relied on whenmaking a claim or prediction), and easier to update(i.e., by allowing developers to replace or add doc-uments to the corpus without retraining the model)(Guu et al., 2020; Borgeaud et al., 2021; Khattabet al., 2021a). Nonetheless, such work poses risksin terms of misuse, particularly toward misinforma-tion, as retrieval can surface results that are relevantyet inaccurate, depending on the contents of a cor-pus. Moreover, generalization from training ona large-scale dataset can propagate the biases ofthat dataset well beyond its typical reach to newdomains and applications.While our contributions have made ColBERT\u2019slate interaction more ef\ufb01cient at storage costs, large-scale distillation with hard negatives increases sys-tem complexity and accordingly increases train-ing cost, when compared with the straightforwardtraining paradigm of the original ColBERT model.While ColBERTv2 is ef\ufb01cient in terms of latency",
+              "and storage at inference time, we suspect that un-der extreme resource constraints, simpler model de-signs like SPLADEv2 or RocketQAv2 could lendthemselves to easier-to-optimize environments. Weleave low-level systems optimizations of all sys-tems to future work. Another worthwhile di-mension for future exploration of tradeoffs is re-ranking architectures over various systems withcross-encoders, which are known to be expensiveyet precise due to their highly expressive capacity.Research LimitationsWhile we evaluate ColBERTv2 on a wide range oftests, all of our benchmarks are in English and, inline with related work, our out-of-domain tests eval-uate models that are trained on MS MARCO. Weexpect our approach to work effectively for otherlanguages and when all models are trained usingother, smaller training set (e.g., NaturalQuestions),but we leave such tests to future work.We have observed consistent gains for Col-BERTv2 against existing state-of-the-art systems",
+              "across many diverse settings. Despite this, almostall IR datasets contain false negatives (i.e., rele-vant but unlabeled passages) and thus some cau-tion is needed in interpreting any individual result.Nonetheless, we intentionally sought out bench-marks with dissimilar annotation biases: for in-stance, TREC-COVID (in BEIR) annotates thepool of documents retrieved by the systems submit-ted at the time of the competition, LoTTE uses au-tomatic Google rankings (for \u201csearch\u201d queries) andStackExchange question\u2013answer pairs (for \u201cforum\u201dqueries), and the Open-QA tests rely on passage-answer overlap for factoid questions. ColBERTv2performed well in all of these settings. We discussother issues pertinent to LoTTE in Appendix \u00a7D.We have compared with a wide range of strongbaselines\u2014including sparse retrieval and single-vector models\u2014and found reliable patterns acrosstests. However, we caution that empirical trendscan change as innovations are introduced to each of"
+            ]
+          }
+        },
+        {
+          "id": "id:personal:pdf:g=jo-bergum:30bcc6207e1da7273180bb3d84aa36ee9b8141f1",
+          "relevance": 2.088479312691473,
+          "source": "langchainstreaming_content",
+          "fields": {
+            "matchfeatures": {
+              "best_chunks": {
+                "0": 0.7555598353848634,
+                "1": 0.43740107420461827,
+                "2": 0.8955184031019916
+              },
+              "chunk_scores": {
+                "0": 0.7555598353848634,
+                "1": 0.43740107420461827,
+                "2": 0.8955184031019916
+              },
+              "my_distance": {
+                "0": 4.465661099344588,
+                "1": 4.282562276733428,
+                "2": 4.511089789832741,
+                "3": 4.447171924403284
+              },
+              "my_distance_scores": {
+                "0": 0.18296048397876596,
+                "1": 0.18930207494276222,
+                "2": 0.18145231490237607,
+                "3": 0.18358150135118897
+              },
+              "my_text_scores": {
+                "0": 0.5725993514060974,
+                "1": 0.24809899926185608,
+                "2": 0.7140660881996155
+              }
+            },
+            "id": "30bcc6207e1da7273180bb3d84aa36ee9b8141f1",
+            "title": "ColBERTv2: Effective and Efficient Retrieval via Lightweight Late Interaction",
+            "page": 17,
+            "chunks": [
+              "sages. This is known to lead to arti\ufb01cial lexicalbias (Lee et al., 2019), where crowdworkers copyterms from the passages into their questions as inthe Open-SQuAD benchmark.Wikipedia Open QA. As a further test of out-of-domain generalization, we evaluate the MSMARCO-trained ColBERTv2, SPLADEv2, andvanilla ColBERT on retrieval for open-domainquestion answering, similar to the out-of-domainsetting of Khattab et al. (2021b). We reportSuccess@5 (sometimes referred to as Recall@5),which is the percentage of questions whose shortanswer string overlaps with one or more of thetop-5 passages. For the queries, we use the de-velopment set questions of the open-domain ver-sions (Lee et al., 2019; Karpukhin et al., 2020) ofNatural Questions (NQ; Kwiatkowski et al. 2019),TriviaQA (TQ; Joshi et al. 2017), and SQuAD (Ra-jpurkar et al., 2016) datasets in Table 5b. As abaseline, we include the BM25 (Robertson et al.,1995) results using the Anserini (Yang et al., 2018a)",
+              "toolkit. We observe that ColBERTv2 outperformsBM25, vanilla ColBERT, and SPLADEv2 acrossthe three query sets, with improvements of up to4.6 points over SPLADEv2.LoTTE. Next, we analyze performance on theLoTTE test benchmark, which focuses on naturalqueries over long-tail topics and exhibits a differentannotation pattern to the datasets in the previousOOD evaluations. In particular, LoTTE uses auto-matic Google rankings (for the \u201csearch\u201d queries)and organic StackExchange question\u2013answer pairs(for \u201cforum\u201d queries), complimenting the pooling-based annotation of datasets like TREC-COVID (inBEIR) and the answer overlap metrics of Open-QAretrieval. We report Success@5 for each corpus onboth search queries and forum queries.Overall, we see that ANCE and vanilla Col-BERT outperform BM25 on all topics, and thatthe three methods using distillation are generallythe strongest. Similar to the Wikipedia-OpenQAresults, we \ufb01nd that ColBERTv2 outperforms the",
+              "baselines across all topics for both query types, im-proving upon SPLADEv2 and RocketQAv2 by upto 3.7 and 8.1 points, respectively. Consideringthe baselines, we observe that while RocketQAv2tends to have a slight advantage over SPLADEv2on the \u201csearch\u201d queries, SPLADEv2 is consider-ably more effective on the \u201cforum\u201d tests. We hy-pothesize that the search queries, obtained fromGoogle (through GooAQ) are more similar to MSMARCO than the forum queries and, as a result,the latter stresses generalization more heavily, re-warding term-decomposed models like SPLADEv2and ColBERTv2.5.3 Ef\ufb01ciencyColBERTv2\u2019s residual compression approach sig-ni\ufb01cantly reduces index sizes compared to vanillaColBERT. Whereas ColBERT requires 154 GiBto store the index for MS MARCO, ColBERTv2only requires 16 GiB or 25 GiB when compressingembeddings to 1 or 2 bit(s) per dimension, respec-tively, resulting in compression ratios of 6\u201310 \u00d7.This storage \ufb01gure includes 4.5 GiB for storing theinverted list.",
+              "This matches the storage for a typical single-vector model on MS MARCO, with 4-byte lossless\ufb02oating-point storage for one 768-dimensional vec-tor for each of the 9M passages amounting to a littleover 25 GiBs. In practice, the storage for a single-vector model could be even larger when using anearest-neighbor index like HNSW for fast search.Conversely, single-vector representations could bethemselves compressed very aggressively (Zhanet al., 2021a, 2022), though often exacerbating theloss in quality relative to late interaction methodslike ColBERTv2.We discuss the impact of our compressionmethod on search quality in Appendix B andpresent query latency results on the order of 50\u2013250 milliseconds per query in Appendix C.6 ConclusionWe introduced ColBERTv2, a retriever that ad-vances the quality and space ef\ufb01ciency of multi-vector representations. We hypothesized that clus-ter centroids capture context-aware semantics ofthe token-level representations and proposed a"
+            ]
+          }
+        },
+        {
+          "id": "id:personal:pdf:g=jo-bergum:a731a839198de04fa3d1a3cee6890d0d170ab025",
+          "relevance": 2.0715509295628847,
+          "source": "langchainstreaming_content",
+          "fields": {
+            "matchfeatures": {
+              "best_chunks": {
+                "0": 0.47261841450054143,
+                "1": 0.7745423734712505,
+                "3": 0.4138888386284594
+              },
+              "chunk_scores": {
+                "0": 0.47261841450054143,
+                "1": 0.7745423734712505,
+                "2": 0.41050130296263354,
+                "3": 0.4138888386284594
+              },
+              "my_distance": {
+                "0": 4.040371686261514,
+                "1": 4.388944475654163,
+                "2": 5.029370866823432,
+                "3": 4.969145577432493
+              },
+              "my_distance_scores": {
+                "0": 0.19839806709606142,
+                "1": 0.1855650961923504,
+                "2": 0.1658547835401024,
+                "3": 0.16752816412799396
+              },
+              "my_text_scores": {
+                "0": 0.27422034740448,
+                "1": 0.5889772772789001,
+                "2": 0.24464651942253113,
+                "3": 0.2463606745004654
+              }
+            },
+            "id": "a731a839198de04fa3d1a3cee6890d0d170ab025",
+            "title": "ColBERTv2: Effective and Efficient Retrieval via Lightweight Late Interaction",
+            "page": 1,
+            "chunks": [
+              "ColBERTv2:Effective and Ef\ufb01cient Retrieval via Lightweight Late InteractionKeshav Santhanam\u2217Stanford UniversityOmar Khattab\u2217Stanford UniversityJon Saad-FalconGeorgia Institute of TechnologyChristopher PottsStanford UniversityMatei ZahariaStanford UniversityAbstractNeural information retrieval (IR) has greatlyadvanced search and other knowledge-intensive language tasks. While many neuralIR methods encode queries and documentsinto single-vector representations, lateinteraction models produce multi-vector repre-sentations at the granularity of each token anddecompose relevance modeling into scalabletoken-level computations. This decompositionhas been shown to make late interaction moreeffective, but it in\ufb02ates the space footprint ofthese models by an order of magnitude. In thiswork, we introduce ColBERTv2, a retrieverthat couples an aggressive residual compres-sion mechanism with a denoised supervisionstrategy to simultaneously improve the quality",
+              "and space footprint of late interaction. Weevaluate ColBERTv2 across a wide rangeof benchmarks, establishing state-of-the-artquality within and outside the training domainwhile reducing the space footprint of lateinteraction models by 6\u201310\u00d7.1 IntroductionNeural information retrieval (IR) has quickly domi-nated the search landscape over the past 2\u20133 years,dramatically advancing not only passage and doc-ument search (Nogueira and Cho, 2019) but alsomany knowledge-intensive NLP tasks like open-domain question answering (Guu et al., 2020),multi-hop claim veri\ufb01cation (Khattab et al., 2021a),and open-ended generation (Paranjape et al., 2022).Many neural IR methods follow a single-vectorsimilarity paradigm: a pretrained language modelis used to encode each query and each documentinto a single high-dimensional vector, and rele-vance is modeled as a simple dot product betweenboth vectors. An alternative is late interaction, in-troduced in ColBERT (Khattab and Zaharia, 2020),",
+              "where queries and documents are encoded at a \ufb01ner-granularity into multi-vector representations, and\u2217Equal contribution.relevance is estimated using rich yet scalable in-teractions between these two sets of vectors. Col-BERT produces an embedding for every token inthe query (and document) and models relevanceas the sum of maximum similarities between eachquery vector and all vectors in the document.By decomposing relevance modeling into token-level computations, late interaction aims to reducethe burden on the encoder: whereas single-vectormodels must capture complex query\u2013document re-lationships within one dot product, late interactionencodes meaning at the level of tokens and del-egates query\u2013document matching to the interac-tion mechanism. This added expressivity comesat a cost: existing late interaction systems imposean order-of-magnitude larger space footprint thansingle-vector models, as they must store billionsof small vectors for Web-scale collections. Con-",
+              "sidering this challenge, it might seem more fruit-ful to focus instead on addressing the fragility ofsingle-vector models (Menon et al., 2022) by in-troducing new supervision paradigms for negativemining (Xiong et al., 2020), pretraining (Gao andCallan, 2021), and distillation (Qu et al., 2021).Indeed, recent single-vector models with highly-tuned supervision strategies (Ren et al., 2021b; For-mal et al., 2021a) sometimes perform on-par oreven better than \u201cvanilla\u201d late interaction models,and it is not necessarily clear whether late inter-action architectures\u2014with their \ufb01xed token-levelinductive biases\u2014admit similarly large gains fromimproved supervision.In this work, we show that late interaction re-trievers naturally produce lightweight token rep-resentations that are amenable to ef\ufb01cient storageoff-the-shelf and that they can bene\ufb01t drasticallyfrom denoised supervision. We couple those inColBERTv2,1 a new late-interaction retriever that"
+            ]
+          }
+        },
+        {
+          "id": "id:personal:pdf:g=jo-bergum:b97e7f232f7ad864dc94f4fd561d488671619fff",
+          "relevance": 1.9485328183969646,
+          "source": "langchainstreaming_content",
+          "fields": {
+            "matchfeatures": {
+              "best_chunks": {
+                "0": 0.8559089166847854,
+                "1": 0.6695435042752889,
+                "3": 0.4230803974368902
+              },
+              "chunk_scores": {
+                "0": 0.8559089166847854,
+                "1": 0.6695435042752889,
+                "3": 0.4230803974368902
+              },
+              "my_distance": {
+                "0": 4.812548292478616,
+                "1": 4.167973466499581,
+                "2": 4.5182000236158455,
+                "3": 4.714893185387047
+              },
+              "my_distance_scores": {
+                "0": 0.17204158136526637,
+                "1": 0.1934994454755452,
+                "2": 0.18121851250776913,
+                "3": 0.17498139817503414
+              },
+              "my_text_scores": {
+                "0": 0.683867335319519,
+                "1": 0.47604405879974365,
+                "3": 0.24809899926185608
+              }
+            },
+            "id": "b97e7f232f7ad864dc94f4fd561d488671619fff",
+            "title": "ColBERTv2: Effective and Efficient Retrieval via Lightweight Late Interaction",
+            "page": 5,
+            "chunks": [
+              "by PQ via a ranking-oriented loss.SDR (Cohen et al., 2021) uses an autoencoder toreduce the dimensionality of the contextual embed-dings used for attention-based re-ranking and thenapplies a quantization scheme for further compres-sion. DensePhrases (Lee et al., 2021a) is a systemfor Open-QA that relies on a multi-vector encod-ing of passages, though its search is conductedat the level of individual vectors and not aggre-gated with late interaction. Very recently, Lee et al.(2021b) propose a quantization-aware \ufb01netuningmethod based on PQ to reduce the space footprintof DensePhrases. While DensePhrases is effectiveat Open-QA, its retrieval quality\u2014as measured bytop-20 retrieval accuracy on NaturalQuestions andTriviaQA\u2014is competitive with DPR (Karpukhinet al., 2020) and considerably less effective thanColBERT (Khattab et al., 2021b).In this work, we focus on late-interaction re-trieval and investigate compression using a residualcompression approach that can be applied off-the-",
+              "shelf to late interaction models, without specialtraining. We show in Appendix A that ColBERT\u2019srepresentations naturally lend themselves to resid-ual compression. Techniques in the family of resid-ual compression are well-studied (Barnes et al.,1996) and have previously been applied across sev-eral domains, including approximate nearest neigh-bor search (Wei et al., 2014; Ai et al., 2017), neuralnetwork parameter and activation quantization (Liet al., 2021b,a), and distributed deep learning (Chenet al., 2018; Liu et al., 2020). To the best of ourknowledge, ColBERTv2 is the \ufb01rst approach to useresidual compression for scalable neural IR.2.3 Improving the Quality of Single-VectorRepresentationsInstead of compressing multi-vector representa-tions as we do, much recent work has focusedon improving the quality of single-vector mod-els, which are often very sensitive to the speci\ufb01csof supervision. This line of work can be decom-posed into three directions: (1) distillation of more",
+              "expressive architectures (Hofst\u00e4tter et al., 2020;Lin et al., 2020) including explicit denoising (Quet al., 2021; Ren et al., 2021b), (2) hard negativesampling (Xiong et al., 2020; Zhan et al., 2020a,2021b), and (3) improved pretraining (Gao andCallan, 2021; O\u02d8guz et al., 2021). We adopt similartechniques to (1) and (2) for ColBERTv2\u2019s multi-vector representations (see \u00a73.2).QuestionPassageQuestion EncoderPassage EncoderMaxSimMaxSimMaxSimscoreOffline IndexingFigure 1: The late interaction architecture, given aquery and a passage. Diagram from Khattab et al.(2021b) with permission.2.4 Out-of-Domain Evaluation in IRRecent progress in retrieval has mostly focused onlarge-data evaluation, where many tens of thou-sands of annotated training queries are associatedwith the test domain, as in MS MARCO or Natu-ral Questions (Kwiatkowski et al., 2019). In thesebenchmarks, queries tend to re\ufb02ect high-popularitytopics like movies and athletes in Wikipedia. In",
+              "practice, user-facing IR and QA applications oftenpertain to domain-speci\ufb01c corpora, for which littleto no training data is available and whose topicsare under-represented in large public collections.This out-of-domain regime has received recentattention with the BEIR (Thakur et al., 2021) bench-mark. BEIR combines several existing datasetsinto a heterogeneous suite for \u201czero-shot IR\u201d tasks,spanning bio-medical, \ufb01nancial, and scienti\ufb01c do-mains. While the BEIR datasets provide a use-ful testbed, many capture broad semantic related-ness tasks\u2014like citations, counter arguments, orduplicate questions\u2013instead of natural search tasks,or else they focus on high-popularity entities likethose in Wikipedia. In \u00a74, we introduce LoTTE, anew dataset for out-of-domain retrieval, exhibitingnatural search queries over long-tail topics.3 ColBERTv2We now introduce ColBERTv2, which improvesthe quality of multi-vector retrieval models (\u00a73.2)"
+            ]
+          }
+        },
+        {
+          "id": "id:personal:pdf:g=jo-bergum:422c636a65f44e31c5e03db77c6ce8da68bcee67",
+          "relevance": 1.7175012373741798,
+          "source": "langchainstreaming_content",
+          "fields": {
+            "matchfeatures": {
+              "best_chunks": {
+                "1": 0.5190974408061678,
+                "2": 0.5746601875871388,
+                "3": 0.6237436089808733
+              },
+              "chunk_scores": {
+                "1": 0.5190974408061678,
+                "2": 0.5746601875871388,
+                "3": 0.6237436089808733
+              },
+              "my_distance": {
+                "0": 4.915591152582989,
+                "1": 4.803742042647418,
+                "2": 4.873684135669764,
+                "3": 4.908876367903959
+              },
+              "my_distance_scores": {
+                "0": 0.1690448129707813,
+                "1": 0.17230262693478413,
+                "2": 0.17025089822709236,
+                "3": 0.169236913710335
+              },
+              "my_text_scores": {
+                "1": 0.34679481387138367,
+                "2": 0.4044092893600464,
+                "3": 0.45450669527053833
+              }
+            },
+            "id": "422c636a65f44e31c5e03db77c6ce8da68bcee67",
+            "title": "ColBERTv2: Effective and Efficient Retrieval via Lightweight Late Interaction",
+            "page": 11,
+            "chunks": [
+              "Topic Question Set Dev Test# Questions # Passages Subtopics # Questions # Passages SubtopicsWriting Search 497 277k ESL, Linguistics,Worldbuilding1071 200k EnglishForum 2003 2000Recreation Search 563 263k Sci-Fi, RPGs,Photography924 167k Gaming,Anime, MoviesForum 2002 2002Science Search 538 344k Chemistry,Statistics, Academia617 1.694M Math,Physics, BiologyForum 2013 2017Technology Search 916 1.276M Web Apps,Ubuntu, SysAdmin596 639k Apple, Android,UNIX, SecurityForum 2003 2004Lifestyle Search 417 269k DIY , Music, Bicycles,Car Maintenance661 119k Cooking,Sports, TravelForum 2076 2002Pooled Search 2931 2.4M All of the above 3869 2.8M All of the aboveForum 10097 10025Table 1: Composition of LoTTE showing topics, question sets, and a sample of corresponding subtopics. SearchQueries are taken from GooAQ, while Forum Queries are taken directly from the StackExchange archive. Thepooled datasets combine the questions and passages from each of the subtopics.",
+              "rums. StackExchange is a set of question-and-answer communities that target individual topics(e.g., \u201cphysics\u201d or \u201cbicycling\u201d). We gather forumsfrom \ufb01ve overarching domains: writing, recreation,science, technology, and lifestyle. To evaluate re-trievers, we collect Search and Forumqueries, eachof which is associated with one or more target an-swer posts in its corpus. Example queries, andshort snippets from posts that answer them in thecorpora, are shown in Table 2.Search Queries. We collect search queries fromGooAQ (Khashabi et al., 2021), a recent datasetof Google search-autocomplete queries and theiranswer boxes, which we \ufb01lter for queries whoseanswers link to a speci\ufb01c StackExchange post. AsKhashabi et al. (2021) hypothesize, Google Searchlikely maps these natural queries to their answersby relying on a wide variety of signals for rele-vance, including expert annotations, user clicks,and hyperlinks as well as specialized QA compo-nents for various question types with access to the",
+              "post title and question body. Using those annota-tions as ground truth, we evaluate the models ontheir capacity for retrieval using only free text ofthe answer posts (i.e., no hyperlinks or user clicks,question title or body, etc.), posing a signi\ufb01cantchallenge for IR and NLP systems trained only onpublic datasets.Forum Queries. We collect the forum queriesby extracting post titles from the StackExchangecommunities to use as queries and collect theircorresponding answer posts as targets. We selectquestions in order of their popularity and samplequestions according to the proportional contribu-tion of individual communities within each topic.Q: what is the difference between root and stem in lin-guistics? A: A root is the form to which derivationalaf\ufb01xes are added to form a stem. A stem is the formto which in\ufb02ectional af\ufb01xes are added to form a word.Q: are there any airbenders left? A: the Fire Nationhad wiped out all Airbenders while Aang was frozen.",
+              "Tenzin and his 3 children are the only Airbenders leftin Korra\u2019s time.Q: Why are there two Hydrogen atoms on some peri-odic tables? A: some periodic tables show hydrogen inboth places to emphasize that hydrogen isn\u2019t really amember of the \ufb01rst group or the seventh group.Q: How can cache be that fast? A: the cache memorysits right next to the CPU on the same die (chip), it ismade using SRAM which is much, much faster thanthe DRAM.Table 2: Examples of queries and shortened snippets ofanswer passages from LoTTE. The \ufb01rst two examplesshow \u201csearch\u201d queries, whereas the last two are \u201cfo-rum\u201d queries. Snippets are shortened for presentation.These queries tend to have a wider variety thanthe \u201csearch\u201d queries, while the search queries mayexhibit more natural patterns. Table 3 compares arandom samples of search and forum queries. Itcan be seen that search queries tend to be brief,knowledge-based questions with direct answers,whereas forum queries tend to re\ufb02ect more open-"
+            ]
+          }
+        },
+        {
+          "id": "id:personal:pdf:g=jo-bergum:f19b24ceb7b62f68e56ee943bc77f78d4d382fa8",
+          "relevance": 1.5793075221660695,
+          "source": "langchainstreaming_content",
+          "fields": {
+            "matchfeatures": {
+              "best_chunks": {
+                "0": 0.7573986048365038,
+                "1": 0.4112784625739298,
+                "3": 0.410630454755636
+              },
+              "chunk_scores": {
+                "0": 0.7573986048365038,
+                "1": 0.4112784625739298,
+                "3": 0.410630454755636
+              },
+              "my_distance": {
+                "0": 4.711462693291324,
+                "1": 4.718962440197616,
+                "2": 4.565342720716433,
+                "3": 5.024679424506655
+              },
+              "my_distance_scores": {
+                "0": 0.1750864977503221,
+                "1": 0.17485689239208319,
+                "2": 0.17968345350549567,
+                "3": 0.16598393533310488
+              },
+              "my_text_scores": {
+                "0": 0.5823121070861816,
+                "1": 0.23642157018184662,
+                "3": 0.24464651942253113
+              }
+            },
+            "id": "f19b24ceb7b62f68e56ee943bc77f78d4d382fa8",
+            "title": "ColBERTv2: Effective and Efficient Retrieval via Lightweight Late Interaction",
+            "page": 9,
+            "chunks": [
+              "vector representations. Product quantization (Gray,1984; Jegou et al., 2010) compresses a single vectorby splitting it into small sub-vectors and encodingeach of them using an ID within a codebook. Inour approach, each representation is already a ma-trix that is naturally divided into a number of smallvectors (one per token). We encode each vectorusing its nearest centroid plus a residual. Referto Appendix B for tests of the impact of compres-sion on retrieval quality and a comparison with abaseline compression method for ColBERT akin toBPR (Yamada et al., 2021b).3.4 IndexingGiven a corpus of passages, the indexing stageprecomputes all passage embeddings and orga-nizes their representations to support fast nearest-neighbor search. ColBERTv2 divides indexing intothree stages, described below.Centroid Selection. In the \ufb01rst stage, Col-BERTv2 selects a set of cluster centroids C. Theseare embeddings that ColBERTv2 uses to sup-port residual encoding (\u00a73.3) and also for nearest-",
+              "neighbor search (\u00a73.5). Standardly, we \ufb01nd thatsetting |C|proportionally to the square root ofnembeddings in the corpus works well empirically.3Khattab and Zaharia (2020) only clustered the vec-tors after computing the representations of all pas-sages, but doing so requires storing them uncom-pressed. To reduce memory consumption, we applyk-means clustering to the embeddings produced byinvoking our BERT encoder over only a sample ofall passages, proportional to the square root of thecollection size, an approach we found to performwell in practice.Passage Encoding. Having selected the cen-troids, we encode every passage in the corpus. Thisentails invoking the BERT encoder and compress-ing the output embeddings as described in \u00a73.3,assigning each embedding to the nearest centroidand computing a quantized residual. Once a chunkof passages is encoded, the compressed representa-tions are saved to disk.Index Inversion. To support fast nearest-neighbor search, we group the embedding IDs that",
+              "correspond to each centroid together, and save thisinverted list to disk. At search time, this allows usto quickly \ufb01nd token-level embeddings similar tothose in a query.3We round down to the nearest power of two larger than16 \u00d7\u221anembeddings, inspired by FAISS (Johnson et al., 2019).3.5 RetrievalGiven a query representationQ, retrieval starts withcandidate generation. For every vector Qi in thequery, the nearest nprobe \u22651 centroids are found.Using the inverted list, ColBERTv2 identi\ufb01es thepassage embeddings close to these centroids, de-compresses them, and computes their cosine simi-larity with every query vector. The scores are thengrouped by passage ID for each query vector, andscores corresponding to the same passage are max-reduced. This allows ColBERTv2 to conduct anapproximate \u201cMaxSim\u201d operation per query vector.This computes a lower-bound on the true MaxSim(\u00a73.1) using the embeddings identi\ufb01ed via the in-verted list, which resembles the approximation ex-",
+              "plored for scoring by Macdonald and Tonellotto(2021) but is applied for candidate generation.These lower bounds are summed across thequery tokens, and the top-scoring ncandidate can-didate passages based on these approximate scoresare selected for ranking, which loads the completeset of embeddings of each passage, and conductsthe same scoring function using all embeddingsper document following Equation 1. The resultpassages are then sorted by score and returned.4 LoTTE: Long-Tail, Cross-DomainRetrieval EvaluationWe introduce LoTTE (pronounced latte), a newdataset for Long-Tail Topic-strati\ufb01ed Evaluationfor IR. To complement the out-of-domain tests ofBEIR (Thakur et al., 2021), as motivated in \u00a72.4,LoTTE focuses on natural user queries that pertainto long-tail topics, ones that might not be coveredby an entity-centric knowledge base like Wikipedia.LoTTE consists of 12 test sets, each with 500\u20132000queries and 100k\u20132M passages."
+            ]
+          }
+        },
+        {
+          "id": "id:personal:pdf:g=jo-bergum:8c2e424d7a35a861afe7606d0064e344592c2ea0",
+          "relevance": 1.5235566951895985,
+          "source": "langchainstreaming_content",
+          "fields": {
+            "matchfeatures": {
+              "best_chunks": {
+                "0": 0.8802306002055117,
+                "3": 0.6433260949840868
+              },
+              "chunk_scores": {
+                "0": 0.8802306002055117,
+                "3": 0.6433260949840868
+              },
+              "my_distance": {
+                "0": 4.261923378460492,
+                "1": 4.918872931709623,
+                "2": 4.564136189898423,
+                "3": 4.657475058073371
+              },
+              "my_distance_scores": {
+                "0": 0.1900445764933535,
+                "1": 0.16895108435976466,
+                "2": 0.17972241617943857,
+                "3": 0.17675729715731983
+              },
+              "my_text_scores": {
+                "0": 0.6901860237121582,
+                "3": 0.46656879782676697
+              }
+            },
+            "id": "8c2e424d7a35a861afe7606d0064e344592c2ea0",
+            "title": "ColBERTv2: Effective and Efficient Retrieval via Lightweight Late Interaction",
+            "page": 36,
+            "chunks": [
+              "k-means clustering,9 though unlike ColBERT wedo not use it for nearest-neighbor search. Instead,we implement our candidate generation mechanism(\u00a73.5) using PyTorch primitives in Python.We conducted our experiments on an internalcluster, typically using up to four 12GB Titan VGPUs for each of the inference tasks (e.g., index-ing, computing distillation scores, and retrieval)and four 80GB A100 GPUs for training, thoughGPUs with smaller RAM can be used via gradientaccumulation. Using this infrastructure, computingthe distillation scores takes under a day, training a64-way model on MS MARCO for 400,000 stepstakes around \ufb01ve days, and indexing takes approx-imately two hours. We very roughly estimate anupper bound total of 20 GPU-months for all experi-mentation, development, and evaluation performedfor this work over a period of several months.Like ColBERT, our encoder is abert-base-uncased model that is sharedbetween the query and passage encoders and which",
+              "has 110M parameters. We retain the default vectordimension suggested by Khattab and Zaharia(2020) and used in subsequent work, namely,d=128. For the experiments reported in this paper,we train on MS MARCO training set. We usesimple defaults with limited manual exploration onthe of\ufb01cial development set for the learning rate(10\u22125), batch size (32 examples), and warm up(for 20,000 steps) with linear decay.Hyperparameters corresponding to retrieval areexplored in \u00a7C. We default to probe = 2, butuse probe = 4 on the largest datasets, namely,MS MARCO and Wikipedia. By default we setcandidates = probe \u2217212, but for Wikipediawe set candidates = probe \u2217213 and for MSMARCO we set candidates = probe \u2217214. Weleave extensive tuning of hyperparameters to futurework.We train on MS MARCO using 64-way tuplesfor distillation, sampling them from the top-500retrieved passages per query. The training set ofMS MARCO contains approximately 800k queries,though only about 500k have associated labels. We",
+              "apply distillation using all 800k queries, whereeach training example contains exactly one \u201cposi-tive\u201d, de\ufb01ned as a passage labeled as positive or thetop-ranked passage by the cross-encoder teacher,irrespective of its label.We train for 400k steps, initializing from a pre-9https://github.com/facebookresearch/faiss\ufb01netuned checkpoint using 32-way training exam-ples and 150k steps. To generate the top- k pas-sages per training query, we apply two rounds, fol-lowing Khattab et al. (2021b). We start from amodel trained with hard triples (akin to Khattabet al. (2021b)), train with distillation, and then usethe distilled model to retrieve for the second roundof training. Preliminary experiments indicate thatquality has low sensitivity to this initialization andtwo-round training, suggesting that both of themcould be avoided to reduce the cost of training.Unless otherwise stated, the results shown rep-resent a single run. The latency results in \u00a73 are",
+              "averages of three runs. To evaluate for Open-QA re-trieval, we use evaluation scripts from Khattab et al.(2021b), which checks if the short answer stringappears in the (titled) Wikipedia passage. Thisadapts the DPR (Karpukhin et al., 2020) evaluationcode.10 We use the preprocessed Wikipedia Dec2018 dump released by Karpukhin et al. (2020).For out-of-domain evaluation, we elected to fol-low Thakur et al. (2021) and set the maximumdocument length of ColBERT, RocketQAv2, andColBERTv2 to 300 tokens on BEIR and LoTTE.Formal et al. (2021a) selected maximum sequencelength 256 for SPLADEv2 both on MS MARCOand on BEIR for both queries and documents, andwe retained this default when testing their systemon LoTTE. Unless otherwise stated, we keep thedefault query maximum sequence length for Col-BERTv2 and RocketQAv2, which is 32 tokens. Forthe ArguAna test in BEIR, as the queries are them-selves long documents, we set the maximum querylength used by ColBERTv2 and RocketQAv2 to"
+            ]
+          }
+        }
+      ]
+    }
+  }

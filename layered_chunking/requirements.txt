@@ -1,0 +1,23 @@
+# Vespa and Core Dependencies
+pyvespa>=0.40.0
+
+# FastAPI and Server
+fastapi>=0.104.0
+uvicorn>=0.24.0
+
+# LangChain
+langchain>=0.1.0
+langchain-text-splitters>=0.3.4
+langchain-openai>=0.0.5
+langchain-core>=0.1.0
+langchain-community>=0.0.10
+
+# PDF Processing
+pypdf>=5.1.0
+
+# Embeddings
+sentence-transformers>=2.2.0
+
+# Additional Utilities
+requests>=2.31.0
+
